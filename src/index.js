@@ -35,6 +35,7 @@ var params = {
                     QueueUrl: queueURL,
                     ReceiptHandle: data.Messages[0].ReceiptHandle
                 };
+                console.log(`Message received: ${JSON.stringify(data.Messages)}`)
                 sqs.deleteMessage(deleteParams, function (err, data) {
                     if (err) {
                         console.log("Delete Error", err);
